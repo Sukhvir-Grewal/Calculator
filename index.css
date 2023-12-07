@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+html,
+body {
+    background-color: #1c1c1c;
+    /* width: 100vw;
+  height: 100vh; */
+}
+
+.blackBox {
+    width: 100px;
+    height: 230px;
+    background-color: #1c1c1c;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+button {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    font-size: 35px;
+    margin: 3px;
+    border: none;
+}
+.Zero {
+    border-radius: 50px;
+    flex-grow: 2;
+    text-align: left;
+    padding: 0 40px;
+}
+.operator {
+    background-color: #ff9500;
+    color: white;
+}
+.commands {
+    background-color: #d4d4d2;
+}
+.operands {
+    background-color: #505050;
+    color: white;
+}
+.result {
+    font-size: 100px;
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
