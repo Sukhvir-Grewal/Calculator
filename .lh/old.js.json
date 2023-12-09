@@ -1,0 +1,18 @@
+{
+    "sourceFile": "old.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1701953720169,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1701953720169,
+            "name": "Commit-0",
+            "content": "document.addEventListener('DOMContentLoaded', () => {\r\n    const resultElement = document.querySelector('.get_number');\r\n    let currentOperation = '';\r\n    let previousNumber = '';\r\n    let currentNumber = '0';\r\n\r\n    document.querySelectorAll('.container button').forEach(button => {\r\n        button.addEventListener('click', () => {\r\n            if (button.classList.contains('operands')) {\r\n                handleNumber(button.value);\r\n            } else if (button.classList.contains('operator')) {\r\n                handleOperator(button.value);\r\n            } else if (button.classList.contains('clear')) {\r\n                clearResult();\r\n            } else if (button.classList.contains('positiveOrNegative')) {\r\n                toggleSign();\r\n            } else if (button.classList.contains('persentage')) {\r\n                percentage();\r\n            }\r\n        });\r\n    });\r\n\r\n    function updateDisplay() {\r\n        resultElement.textContent = currentNumber;\r\n    }\r\n\r\n    function handleNumber(number) {\r\n        if (currentNumber === '0') {\r\n            currentNumber = number;\r\n        } else {\r\n            currentNumber += number;\r\n        }\r\n        updateDisplay();\r\n    }\r\n\r\n    function handleOperator(operator) {\r\n        if (currentOperation !== '') {\r\n            calculate();\r\n        }\r\n        previousNumber = currentNumber;\r\n        currentNumber = '0';\r\n        currentOperation = operator;\r\n    }\r\n\r\n    function calculate() {\r\n        let result;\r\n        const prev = parseFloat(previousNumber);\r\n        const current = parseFloat(currentNumber);\r\n\r\n        switch (currentOperation) {\r\n            case '+':\r\n                result = prev + current;\r\n                break;\r\n            case '-':\r\n                result = prev - current;\r\n                break;\r\n            case '*':\r\n                result = prev * current;\r\n                break;\r\n            case '/':\r\n                result = prev / current;\r\n                break;\r\n            default:\r\n                return;\r\n        }\r\n\r\n        currentNumber = result.toString();\r\n        currentOperation = '';\r\n        updateDisplay();\r\n    }\r\n\r\n    function clearResult() {\r\n        currentNumber = '0';\r\n        previousNumber = '';\r\n        currentOperation = '';\r\n        updateDisplay();\r\n    }\r\n\r\n    function toggleSign() {\r\n        currentNumber = (parseFloat(currentNumber) * -1).toString();\r\n        updateDisplay();\r\n    }\r\n\r\n    function percentage() {\r\n        currentNumber = (parseFloat(currentNumber) / 100).toString();\r\n        updateDisplay();\r\n    }\r\n\r\n    function handleEqual() {\r\n        if (currentOperation !== '') {\r\n            calculate();\r\n        }\r\n    }\r\n\r\n    document.querySelector('.equal').addEventListener('click', handleEqual);\r\n});\r\n"
+        }
+    ]
+}

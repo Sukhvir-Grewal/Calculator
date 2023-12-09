@@ -5,20 +5,24 @@
 html,
 body {
     background-color: #1c1c1c;
-    /* width: 100vw;
-  height: 100vh; */
-}
-
-.blackBox {
-    width: 100px;
-    height: 230px;
-    background-color: #1c1c1c;
+    overflow: hidden;
 }
 
 .container {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
 }
+
 button {
     width: 90px;
     height: 90px;
@@ -45,10 +49,11 @@ button {
     color: white;
 }
 .result {
-    font-size: 100px;
-    width: 100vw;
+    width: 100dvw;
     color: white;
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    font-size: 3rem;
+    padding-right: 10px;
 }
